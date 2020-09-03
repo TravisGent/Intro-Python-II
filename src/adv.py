@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -49,3 +50,45 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+travis = Player("Travis", room['outside'])
+
+print(room['outside'].__str__())
+direction = input("Enter where you want to go: ")
+
+while direction != "q":
+    if direction == "n":
+        if hasattr(travis.room, 'n_to'):
+            travis.room = travis.room.n_to
+        else:
+            print("You can not move there, try again")
+        print()
+        print(travis.room.__str__())
+        direction = input("Enter where you want to go: ")
+    if direction == "s":
+        if hasattr(travis.room, 's_to'):
+            travis.room = travis.room.s_to
+        else:
+            print("You can not move there, try again")
+        print()
+        print(travis.room.__str__())
+        direction = input("Enter where you want to go: ")
+    if direction == "w":
+        if hasattr(travis.room, 'w_to'):
+            travis.room = travis.room.w_to
+        else:
+            print("You can not move there, try again")
+        print()
+        print(travis.room.__str__())
+        direction = input("Enter where you want to go: ")
+    if direction == "e":
+        if hasattr(travis.room, 'e_to'):
+            travis.room = travis.room.e_to
+        else:
+            print("You can not move there, try again")
+        print()
+        print(travis.room.__str__())
+        direction = input("Enter where you want to go: ")
+        
+
+
+
